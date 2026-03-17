@@ -11,9 +11,9 @@ namespace Cldv_Poe_Submission.Controllers
 {
     public class BookingsController : Controller
     {
-        private readonly EventEaseDBContext _context;
+        private readonly EventEaseManagementContext _context;
 
-        public BookingsController(EventEaseDBContext context)
+        public BookingsController(EventEaseManagementContext context)
         {
             _context = context;
         }

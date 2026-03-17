@@ -6,8 +6,8 @@ namespace Cldv_Poe_Submission.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly EventEaseDBContext _context;
-        public HomeController(EventEaseDBContext context)
+        private readonly EventEaseManagementContext _context;
+        public HomeController(EventEaseManagementContext context)
         {
             _context = context;
         }

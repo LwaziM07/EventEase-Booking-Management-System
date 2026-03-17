@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lwazi\\source\\repos\\Cldv_Poe_Submission\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {}
+    "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lwazi\\source\\repos\\Cldv_Poe_Submission\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {
+    "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lwazi\\source\\repos\\Cldv_Poe_Submission\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+        "projectUniqueName": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
         "projectName": "Cldv_Poe_Submission",
-        "projectPath": "C:\\Users\\Lwazi\\source\\repos\\Cldv_Poe_Submission\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+        "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
         "packagesPath": "C:\\Users\\Lwazi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lwazi\\source\\repos\\Cldv_Poe_Submission\\Cldv_Poe_Submission\\obj\\",
+        "outputPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

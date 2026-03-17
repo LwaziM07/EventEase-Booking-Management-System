@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Cldv_Poe_Submission.Models;
 
-public partial class EventEaseDBContext : DbContext
+public partial class EventEaseManagementContext : DbContext
 {
-    public EventEaseDBContext(DbContextOptions<EventEaseDBContext> options)
+    public EventEaseManagementContext(DbContextOptions<EventEaseManagementContext> options)
         : base(options)
     {
     }
@@ -23,7 +23,7 @@ public partial class EventEaseDBContext : DbContext
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD81FA94D0");
+            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD4496470A");
 
             entity.Property(e => e.BookingId).HasColumnName("BookingID");
             entity.Property(e => e.BookingDate).HasColumnType("datetime");
@@ -45,7 +45,7 @@ public partial class EventEaseDBContext : DbContext
 
         modelBuilder.Entity<Event>(entity =>
         {
-            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C8703E52AB98");
+            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C870165D7CBA");
 
             entity.Property(e => e.EventId).HasColumnName("EventID");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
@@ -58,7 +58,7 @@ public partial class EventEaseDBContext : DbContext
 
         modelBuilder.Entity<Venue>(entity =>
         {
-            entity.HasKey(e => e.VenueId).HasName("PK__Venues__3C57E5D2E69E2F30");
+            entity.HasKey(e => e.VenueId).HasName("PK__Venues__3C57E5D2B83756B5");
 
             entity.Property(e => e.VenueId).HasColumnName("VenueID");
             entity.Property(e => e.ImageUrl)

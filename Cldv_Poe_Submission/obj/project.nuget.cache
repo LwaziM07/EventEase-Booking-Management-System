@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+YSVYcriOsU=",
+  "dgSpecHash": "99wOnol5e0I=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lwazi\\source\\repos\\Cldv_Poe_Submission\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+  "projectFilePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lwazi\\.nuget\\packages\\azure.core\\1.47.1\\azure.core.1.47.1.nupkg.sha512",
     "C:\\Users\\Lwazi\\.nuget\\packages\\azure.identity\\1.14.2\\azure.identity.1.14.2.nupkg.sha512",

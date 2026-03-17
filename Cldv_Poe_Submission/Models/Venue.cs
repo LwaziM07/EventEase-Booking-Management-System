@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Cldv_Poe_Submission.Models;
 
@@ -10,17 +9,12 @@ public partial class Venue
 {
     public int VenueId { get; set; }
 
-    [Display(Name = "Venue Name")]
-
     public string VenueName { get; set; }
-
-    [Display(Name = "Specialist Location")]
 
     public string VenueLocation { get; set; }
 
     public int Capacity { get; set; }
 
-    [Display(Name = "Image")]
     public string ImageUrl { get; set; }
 
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();

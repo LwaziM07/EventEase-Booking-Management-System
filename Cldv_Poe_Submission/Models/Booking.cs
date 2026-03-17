@@ -2,7 +2,6 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Cldv_Poe_Submission.Models;
 
@@ -12,13 +11,10 @@ public partial class Booking
 
     public int EventId { get; set; }
 
-    [Display(Name = "Specialist Name")]
     public string SpecialistName { get; set; }
 
-    [Display(Name = "Specialist Email")]
     public string SpecialistEmail { get; set; }
 
-    [Display(Name = "Booking Date")]
     public DateTime BookingDate { get; set; }
 
     public int VenueId { get; set; }
