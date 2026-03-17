@@ -21,7 +21,20 @@ namespace Cldv_Poe_Submission.Controllers
         // GET: Bookings
         public async Task<IActionResult> Index(string searchString)
         {
-            var bookings = _context.Bookings.Include(b => b.Event).Include(b => b.Venue);
+            var bookings = _context.Bookings.Include(b => b.Event).Include(b => b.Venue).AsQueryable();
+            if (_context.Bookings == null)
+            {
+                return Problem("Booking is not set yet");
+            }
+
+            var bookingitem = from m in _context.Bookings
+                              select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                bookings = bookings.Where(b => b.SpecialistName.ToUpper().Contains(searchString.ToUpper()));
+            }
+
             return View(await bookings.ToListAsync());
         }
 

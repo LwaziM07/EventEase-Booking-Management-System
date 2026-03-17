@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cldv_Poe_Submission")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6ca21efab88febc6e1a9debe985a1280903d0b9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fd1067073c8538856f3ae886d3043bf2d8c1c554")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cldv_Poe_Submission")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cldv_Poe_Submission")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

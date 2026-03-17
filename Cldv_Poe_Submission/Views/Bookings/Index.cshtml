@@ -9,6 +9,12 @@
     <p>
         <a asp-action="Create" class="btn btn-primary">Create New</a>
     </p>
+    <form asp-controller="Movies" asp-action="Index">
+        <p>
+            <label>Specialist: <input type="text" name="SearchString" /></label>
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
 
 </div>
 
