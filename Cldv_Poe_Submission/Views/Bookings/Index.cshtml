@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Cldv_Poe_Submission.Models.Booking>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Manage Bookings</h1>
+<div class="justify-content-between d-flex p-2" >
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Create New</a>
+    </p>
+
+</div>
+
+<div class="card p-3">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpecialistName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SpecialistEmail)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BookingDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Event)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Venue)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialistName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SpecialistEmail)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BookingDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Event.EventName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Venue.VenueLocation)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.BookingId" class="btn btn-primary">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.BookingId" class="btn btn-info">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.BookingId" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

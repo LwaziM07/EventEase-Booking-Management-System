@@ -1,0 +1,52 @@
+﻿@model Cldv_Poe_Submission.Models.Booking
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Booking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EventId" class="control-label"></label>
+                <select asp-for="EventId" class ="form-control" asp-items="ViewBag.EventId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialistName" class="control-label"></label>
+                <input asp-for="SpecialistName" class="form-control" />
+                <span asp-validation-for="SpecialistName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpecialistEmail" class="control-label"></label>
+                <input asp-for="SpecialistEmail" class="form-control" />
+                <span asp-validation-for="SpecialistEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookingDate" class="control-label"></label>
+                <input asp-for="BookingDate" class="form-control" />
+                <span asp-validation-for="BookingDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VenueId" class="control-label"></label>
+                <select asp-for="VenueId" class ="form-control" asp-items="ViewBag.VenueId"></select>
+            </div>
+            <div class="form-group justify-content-evenly d-inline-flex p-2 g-2">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <div>
+                    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
