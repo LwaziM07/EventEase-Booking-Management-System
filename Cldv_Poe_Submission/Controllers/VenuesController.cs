@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Cldv_Poe_Submission.Models;
+using Cldv_Poe_Submission.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Cldv_Poe_Submission.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace Cldv_Poe_Submission.Controllers
 {
@@ -13,9 +14,13 @@ namespace Cldv_Poe_Submission.Controllers
     {
         private readonly EventEaseManagementContext _context;
 
-        public VenuesController(EventEaseManagementContext context)
+        private readonly BlobService _blob; //NAMING CONVENTON FOR SINGLETON
+
+        public VenuesController(EventEaseManagementContext context, BlobService blob)
         {
             _context = context;
+
+            _blob = blob;
         }
 
         // GET: Venues
@@ -53,8 +58,17 @@ namespace Cldv_Poe_Submission.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("VenueId,VenueName,VenueLocation,Capacity,ImageUrl")] Venue venue)
+        public async Task<IActionResult> Create([Bind("VenueId,VenueName,VenueLocation,Capacity")] Venue venue, IFormFile imageFile)
         {
+            if (imageFile != null && imageFile.Length > 0)
+            {
+
+                // wait for file to upload to the blob, then get url to where it lives
+                string uploadedUrl = await _blob.UploadImageAsync(imageFile);
+               venue.ImageUrl = uploadedUrl;
+
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(venue);

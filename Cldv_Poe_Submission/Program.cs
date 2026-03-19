@@ -1,4 +1,5 @@
 using Cldv_Poe_Submission.Models;
+using Cldv_Poe_Submission.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace Cldv_Poe_Submission
@@ -12,6 +13,7 @@ namespace Cldv_Poe_Submission
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<EventEaseManagementContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Conn")));
+            builder.Services.AddScoped(_ => new BlobService(builder.Configuration.GetConnectionString("storage")));
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.

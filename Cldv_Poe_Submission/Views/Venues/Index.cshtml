@@ -42,7 +42,14 @@
                         @Html.DisplayFor(modelItem => item.Capacity)
                     </td>
                     <td>
-                        <img src=@Html.DisplayFor(modelItem => item.ImageUrl) width="150" height="50" />
+                        @if (string.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <span>No Image</span>
+                        }
+                        else
+                        {
+                            <img src="@item.ImageUrl" style="width:100px; height: auto;" />
+                        }
                     </td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@item.VenueId" class="btn btn-primary">Edit</a>

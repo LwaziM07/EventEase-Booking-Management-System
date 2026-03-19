@@ -679,3 +679,6 @@ C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Managem
 C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Management-System\Cldv_Poe_Submission\obj\Debug\net10.0\Cldv_Poe_Submission.pdb
 C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Management-System\Cldv_Poe_Submission\obj\Debug\net10.0\Cldv_Poe_Submission.genruntimeconfig.cache
 C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Management-System\Cldv_Poe_Submission\obj\Debug\net10.0\ref\Cldv_Poe_Submission.dll
+C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Management-System\Cldv_Poe_Submission\bin\Debug\net10.0\Azure.Storage.Blobs.dll
+C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Management-System\Cldv_Poe_Submission\bin\Debug\net10.0\Azure.Storage.Common.dll
+C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\EventEase-Booking-Management-System\Cldv_Poe_Submission\bin\Debug\net10.0\System.IO.Hashing.dll
