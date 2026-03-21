@@ -11,12 +11,15 @@ This program, made in Visual Studio 202 was designed to help users save data per
 To make sure that data remained persistent after the specialist would finishe their session, a database was created to store all of the values of of each entity (Bookings, Venues and Events).
 
 Each entity has its own attributes.
-  Venues:
-  * Venue ID, Venue Name, Venue Location, Capacity, Image for Venue
-  Events:
-  * Event ID, Event Name, Event description, Start Date, End Date
-  Bookings:
-  * Booking ID, Specialist Name, Venue Name, Event Name, Date of Booking
+
+Venues:
+  * Venue ID, Venue Name, Venue Location, Capacity, Image for Venue.
+ 
+Events:
+  * Event ID, Event Name, Event description, Start Date, End Date.
+  
+Bookings:
+  * Booking ID, Specialist Name, Venue Name, Event Name, Date of Booking,
   
 These were created translated into tables from the Sql Server Management System, to be used in Visual Studio.
 
@@ -26,10 +29,13 @@ Controllers, View and Models were added to the visual studio project after rever
 Making it so that each entity would have its own CRUD properties, where its contents can be modified or deleted , and ultimately have those changes reflect across the entire website.
 
 #### Search and filter
-To keep track of the bookings made, the ability to search for who made what booking was necessary. This problem was solved throught the use of LINQ. Where the data was queried searches would take place as the algorithym would select entries made based on the specialist's name and return all entries associated with that search. 
+To keep track of the bookings made, the ability to search for who made what booking was necessary. This problem was solved through the use of LINQ. Where the data was queried searches would take place as the algorithym would select entries made based on the specialist's name and return all entries associated with that search. 
+
+#### File uploads
+Modified the image submission function to add files from local storage instead of using URL links, which makes it easier to rely on.
 
 The specialist would be able to interact with this feature through the bookings web page, crafted from html with the search option spaced right across the propmt to add a new booking.
 
-### Style
-The colors, composition, and layout of the site were all modified throught the use of CSS within the layout.cshtml.css (in the shared folder) file as well as the site.css file (in the wwwroot folder). Aside from CSS, Bootstrap was also used to help with intuitive and attractive design templates that were integrated into the classes of all the elements used within each of the webpages.
+### Styling (CSS and Bootstrap)
+The colors, composition, and layout of the site were modified through CSS in the layout.cshtml.css file (in the shared folder) and the site.css file (in the wwwroot folder). Aside from CSS, Bootstrap was also used to help with intuitive and attractive design templates that were integrated into the classes of all the elements used within each of the webpages.
 
