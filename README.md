@@ -1,6 +1,6 @@
 ## Event Ease | Booking Made Easy
 ### Overview
-This program, made in Visual Studio 202 was designed to help users save data persistently within the website they accessed. The system would work by having specialists working in the events and secretary industry set bookings for events in different loactions, The logic:
+This program, made in Visual Studio 2026 was designed to help users save data persistently within the website they accessed. The system would work by having specialists working in the events and secretary industry set bookings for events in different loactions, The logic:
  * The specialist adds a venue available for booking
  * The Specialist lists an event independent of the venue, just in case a venue is to be made available in advance for said event to be reserved for the venue.
  * The specialist creates the booking based on the venue information and event information added.
