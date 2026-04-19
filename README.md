@@ -39,3 +39,104 @@ The specialist would be able to interact with this feature through the bookings 
 ### Styling (CSS and Bootstrap)
 The colors, composition, and layout of the site were modified through CSS in the layout.cshtml.css file (in the shared folder) and the site.css file (in the wwwroot folder). Aside from CSS, Bootstrap was also used to help with intuitive and attractive design templates that were integrated into the classes of all the elements used within each of the webpages.
 
+# 🚀 .NET Web App Setup Guide
+
+This guide will help you set up and run the project locally using Visual Studio.
+
+---
+
+## 📦 Prerequisites
+
+Make sure you have the following installed:
+
+- Visual Studio (with ASP.NET and web development workload)
+- SQL Server (or SQL Server Express)
+- SQL Server Management Studio (SSMS)
+- EF Core Power Tools (Visual Studio extension)
+
+---
+
+## 📥 1. Clone the Repository
+
+``` bash
+git clone [[INSERT REPO URL](https://github.com/LwaziM07/EventEase-Booking-Management-System.git)]
+cd [PROJECT FOLDER NAME]. 
+```
+## 🗄️ 2. Set Up the Database
+1. Locate the SQL file in the project:
+[EventEaseBooking.sql]
+
+2. Open SQL Server Management Studio (SSMS)
+3. Connect to your local SQL Server instance
+4. Open the SQL file and execute it to:
+  * Create the database
+  * Create tables
+  * Seed initial data (if included)
+    
+## Open the Project in Visual Studio
+1. Open Visual Studio
+2. Click Open a project or solution
+3. Select the .sln file from the cloned repository
+
+## 3. Configure the Connection String
+1. Open:
+   ```
+   appsettings.json
+
+2. Verify that the connection string is set up verbatim to this snippet:
+   ```
+    {
+    "Logging": {
+      "LogLevel": {
+        "Default": "Information",
+        "Microsoft.AspNetCore": "Warning"
+      }
+    },
+    "AllowedHosts": "*",
+    "ConnectionStrings": {
+      "Conn": "Server=localhost; Database =EventBaseDB;Trusted_connection=true;TrustServerCertificate=true",
+      "storage": "UseDevelopmentStorage=True;"
+     }
+    }
+
+## 4. Reverse Engineer the Database (EF Core)
+1. Right-click the project in Solution Explorer
+2. Select EF Core Power Tools → Reverse Engineer
+3. Choose your database connection
+4. Select the tables you want
+5. Complete the wizard
+
+This will generate:
+
+* Entity models
+* DbContext class
+## ▶️ 6. Build and Run the Application
+
+* Build the project.
+  ```
+  Crtl + shift +B
+* Run the project.
+  ```
+  F5
+## 🛠️ Troubleshooting
+
+### App not running?
+
+* Check your connection string
+* Ensure SQL Server is running
+* Rebuild the solution
+
+### EF Core Power Tools not showing?
+
+* Install it via Visual Studio Extensions
+
+### Port conflicts?
+
+* Update the port in:
+```
+ Properties/launchSettings.json
+```
+📌 Notes
+* Ensure your database is created before running the app
+* Always rebuild after making major changes
+* If something breaks, clean + rebuild usually helps
