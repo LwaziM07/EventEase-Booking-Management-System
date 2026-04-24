@@ -7,6 +7,23 @@ This program, made in Visual Studio 2026 was designed to help users save data pe
  * Once added, table summaries of all events, venues, and bookings are displayed to the specialist
  * Should the user need to edit or delete any entries in the system, they should be able to.
 ### Features
+### Interface
+* ## Index pages:
+<img width="1356" height="721" alt="Screenshot 2026-04-24 125904" src="https://github.com/user-attachments/assets/29d89619-e24a-4a4a-a886-3e3386730aa2" />
+
+<img width="1365" height="711" alt="Screenshot 2026-04-24 125923" src="https://github.com/user-attachments/assets/cac4f3d2-104d-4faa-b632-eb73459e060d" />
+
+<img width="1365" height="719" alt="Screenshot 2026-04-24 125941" src="https://github.com/user-attachments/assets/893a1429-b81d-4f3b-90dc-28074b4679c9" />
+
+<img width="1365" height="717" alt="Screenshot 2026-04-24 130002" src="https://github.com/user-attachments/assets/0fa5aeeb-91e0-429a-ba76-a62f9c2af3f5" />
+
+* ## CRUD Pages (Logic is consistent with all tables)
+<img width="1365" height="767" alt="Screenshot 2026-04-24 130028" src="https://github.com/user-attachments/assets/fe921041-973a-41be-8a29-d1d266b49e91" />
+
+<img width="1365" height="767" alt="Screenshot 2026-04-24 130042" src="https://github.com/user-attachments/assets/61d11a28-4cc6-4fdc-8fa3-db6dd20d8f42" />
+
+<img width="1364" height="766" alt="Screenshot 2026-04-24 130103" src="https://github.com/user-attachments/assets/9a5a2fb4-5373-42fd-abe3-30b082c929a2" />
+
 #### Data persistence
 To make sure that data remained persistent after the specialist would finishe their session, a database was created to store all of the values of of each entity (Bookings, Venues and Events).
 
