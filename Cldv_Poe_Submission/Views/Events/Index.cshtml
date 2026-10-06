@@ -24,7 +24,7 @@
             <div class="row align-items-end mb-3">
                 <div class="col-md-4">
                     <label>Event Type</label>
-                    <select name="eventTypeID" asp-items="ViewBag.EventTypeID" class="form-control">
+                    <select name="eventTypeId" asp-items="ViewBag.EventTypeId" class="form-control">
                         <option value="">All Types</option>
                     </select>
                 </div>
@@ -99,7 +99,7 @@
                         @Html.DisplayFor(modelItem => item.EventDescription)
                     </td>
                     <td>
-                            @Html.DisplayFor(modelItem => item.EventType.EventType)
+                            @Html.DisplayFor(modelItem => item.EventType.EventTypes)
                     </td>
                     <td>
                         @if (string.IsNullOrEmpty(item.EventImageUrl))

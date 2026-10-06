@@ -17,14 +17,15 @@ public partial class EventEaseDBContext : DbContext
 
     public virtual DbSet<Event> Events { get; set; }
 
+    public virtual DbSet<EventType> EventTypes { get; set; }
+
     public virtual DbSet<Venue> Venues { get; set; }
 
-    public DbSet<EventTypes> EventTypes { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD43BBEB37");
+            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACDE84C586A");
 
             entity.Property(e => e.BookingId).HasColumnName("BookingID");
             entity.Property(e => e.BookingDate).HasColumnType("datetime");
@@ -46,7 +47,7 @@ public partial class EventEaseDBContext : DbContext
 
         modelBuilder.Entity<Event>(entity =>
         {
-            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C870CDCC8F7D");
+            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C870F5D69ACF");
 
             entity.Property(e => e.EventId).HasColumnName("EventID");
             entity.Property(e => e.EndDate).HasColumnType("datetime");
@@ -57,14 +58,32 @@ public partial class EventEaseDBContext : DbContext
             entity.Property(e => e.EventName)
                 .IsRequired()
                 .HasMaxLength(100);
+            entity.Property(e => e.EventTypeId).HasColumnName("EventTypeId");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.EventType).WithMany(p => p.Events)
+                .HasForeignKey(d => d.EventTypeId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_Events_EventTypes");
+        });
+
+        modelBuilder.Entity<EventType>(entity =>
+        {
+            entity.HasKey(e => e.EventTypeId).HasName("PK__EventTyp__A9216B1FF750DD9A");
+
+            entity.Property(e => e.EventTypeId).HasColumnName("EventTypeId");
+            entity.Property(e => e.EventTypes)
+                .IsRequired()
+                .HasMaxLength(100)
+                .HasColumnName("EventType");
         });
 
         modelBuilder.Entity<Venue>(entity =>
         {
-            entity.HasKey(e => e.VenueId).HasName("PK__Venues__3C57E5D2002CFCEC");
+            entity.HasKey(e => e.VenueId).HasName("PK__Venues__3C57E5D2A27F2187");
 
             entity.Property(e => e.VenueId).HasColumnName("VenueID");
+            entity.Property(e => e.Availability).HasDefaultValue(true);
             entity.Property(e => e.ImageUrl)
                 .HasMaxLength(200)
                 .HasColumnName("ImageURL");
@@ -74,16 +93,6 @@ public partial class EventEaseDBContext : DbContext
             entity.Property(e => e.VenueName)
                 .IsRequired()
                 .HasMaxLength(100);
-        });
-        modelBuilder.Entity<EventTypes>(entity =>
-        {
-            entity.HasKey(e => e.EventTypeID);
-
-            entity.Property(e => e.EventTypeID)
-                  .HasColumnName("EventTypeID");
-
-            entity.Property(e => e.EventType)
-                  .HasMaxLength(100);
         });
 
         OnModelCreatingPartial(modelBuilder);

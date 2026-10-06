@@ -2,30 +2,24 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 
 namespace Cldv_Poe_Submission.Models;
 
 public partial class Booking
 {
     public int BookingId { get; set; }
-    [Display(Name = "Event")]
+
     public int EventId { get; set; }
-    [Display(Name = "Specialist Name")] //making use of name attributes to format the text shown displayed on the web application (dotnet-bot, 2026).
+
     public string SpecialistName { get; set; }
-    [Display(Name = "Special Email")]
+
     public string SpecialistEmail { get; set; }
-    [Display(Name = "Booking Date")]
+
     public DateTime BookingDate { get; set; }
-    [Display(Name = "Venue")]
+
     public int VenueId { get; set; }
 
     public virtual Event Event { get; set; }
 
     public virtual Venue Venue { get; set; }
 }
-/*Reference List
- 
-dotnet-bot.2026. DisplayAttribute.Name Property (System.componentModel.DataAnnotations). [source code] Microsoft.com. Available at: <https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.displayattribute.name?view=net-10.0> [Accessed 8 Apr. 2026].
- 
- */

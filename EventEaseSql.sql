@@ -61,3 +61,5 @@ VALUES
 ('Fundraiser'),
 ('Outdoor'),
 ('Cultural');
+
+SELECT * FROM EventTypes;

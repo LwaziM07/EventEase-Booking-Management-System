@@ -28,7 +28,7 @@ namespace Cldv_Poe_Submission.Controllers
 
             if (eventTypeID.HasValue) //checks if there's an event type to select from using LINQ (Troelsen and Japikse, 2022)
             {
-                events = events.Where(e => e.EventTypeID == eventTypeID);
+                events = events.Where(e => e.EventTypeId == eventTypeID);
             }
 
             //checks the the user's start date against the ones saved in the table.
@@ -37,7 +37,7 @@ namespace Cldv_Poe_Submission.Controllers
                 events = events.Where(e => e.StartDate <= endDate && e.EndDate >= startDate);
             }
 
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType");
+            ViewData["EventTypeId"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType");
 
             return View(await events.ToListAsync());
 
@@ -64,7 +64,8 @@ namespace Cldv_Poe_Submission.Controllers
         // GET: Events/Create
         public IActionResult Create()
         {
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType");
+            ViewData["EventTypeId"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType");
+            ViewData["EventTypeId"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType");
 
             return View();
         }
@@ -74,7 +75,7 @@ namespace Cldv_Poe_Submission.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EventId,EventName,StartDate,EndDate,EventDescription,EventTypeID")] Event @event, IFormFile imageFile)
+        public async Task<IActionResult> Create([Bind("EventId,EventName,StartDate,EndDate,EventDescription,EventTypeId")] Event @event, IFormFile imageFile)
         {
             // if file is present and not empty, upload to blob storage (Co., 2022)
             if (imageFile != null && imageFile.Length > 0)
@@ -95,7 +96,7 @@ namespace Cldv_Poe_Submission.Controllers
 
             }
 
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType", @event.EventTypeID);
+            ViewData["EventTypeId"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType", @event.EventTypeId);
 
 
             if (ModelState.IsValid)
@@ -120,7 +121,7 @@ namespace Cldv_Poe_Submission.Controllers
             {
                 return NotFound();
             }
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType", @event.EventTypeID);
+            ViewData["EventTypeId"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType", @event.EventTypeId);
             return View(@event);
         }
 
@@ -129,7 +130,7 @@ namespace Cldv_Poe_Submission.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("EventId,EventName,StartDate,EndDate,EventDescription,EventTypeID")] Event @event, IFormFile imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("EventId,EventName,StartDate,EndDate,EventDescription,EventTypeId")] Event @event, IFormFile imageFile)
         {
             if (id != @event.EventId)
             {

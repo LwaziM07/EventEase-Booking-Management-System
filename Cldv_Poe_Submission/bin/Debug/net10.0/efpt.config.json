@@ -27,6 +27,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[EventTypes]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Venues]",
          "ObjectType": 0
       }

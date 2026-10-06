@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gMEuEuODp+0=",
+  "dgSpecHash": "33NwuGku9e0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+  "projectFilePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Lwazi\\.nuget\\packages\\azure.core\\1.50.0\\azure.core.1.50.0.nupkg.sha512",
     "C:\\Users\\Lwazi\\.nuget\\packages\\azure.data.tables\\12.11.0\\azure.data.tables.12.11.0.nupkg.sha512",
@@ -141,9 +141,9 @@
       "code": "NU1901",
       "level": "Warning",
       "message": "Package 'NuGet.Packaging' 6.12.1 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
-      "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+      "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+      "filePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
       "libraryId": "NuGet.Packaging",
       "targetGraphs": [
         "net10.0"
@@ -153,9 +153,9 @@
       "code": "NU1901",
       "level": "Warning",
       "message": "Package 'NuGet.Protocol' 6.12.1 has a known low severity vulnerability, https://github.com/advisories/GHSA-g4vj-cjjj-v7hg",
-      "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+      "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+      "filePath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
       "libraryId": "NuGet.Protocol",
       "targetGraphs": [
         "net10.0"
