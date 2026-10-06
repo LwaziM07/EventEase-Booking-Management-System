@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {}
+    "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {
+    "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+        "projectUniqueName": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
         "projectName": "Cldv_Poe_Submission",
-        "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
+        "projectPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\Cldv_Poe_Submission.csproj",
         "packagesPath": "C:\\Users\\Lwazi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\EventEase-Booking-Management-System\\Cldv_Poe_Submission\\obj\\",
+        "outputPath": "C:\\Users\\Lwazi\\OneDrive - ADvTECH Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -30,6 +30,7 @@
         },
         "frameworks": {
           "net10.0": {
+            "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {}
           }
@@ -44,25 +45,42 @@
           "auditLevel": "low",
           "auditMode": "all"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net10.0": {
+          "framework": "net10.0",
           "targetAlias": "net10.0",
           "dependencies": {
+            "Azure.Data.Tables": {
+              "target": "Package",
+              "version": "[12.11.0, )"
+            },
             "Azure.Storage.Blobs": {
               "target": "Package",
               "version": "[12.27.0, )"
             },
+            "Azure.Storage.Files.Shares": {
+              "target": "Package",
+              "version": "[12.25.0, )"
+            },
+            "Azure.Storage.Queues": {
+              "target": "Package",
+              "version": "[12.25.0, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[10.0.3, )"
+              "version": "[10.0.7, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[10.0.2, )"
+              "version": "[10.0.7, )"
+            },
+            "Microsoft.Extensions.Azure": {
+              "target": "Package",
+              "version": "[1.13.1, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
@@ -88,7 +106,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

@@ -3,15 +3,21 @@
 @{
     ViewData["Title"] = "Create";
 }
-
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <!--Error message is called and displayed (Co., 2022)-->
+        @TempData["ErrorMessage"]
+    </div>
+}
 <h1>Create</h1>
 
 <h4>Event</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div><!--using bootstrap to format color of the text (Otto and Thornton, 2026)-->
             <div class="form-group">
                 <label asp-for="EventName" class="control-label"></label>
                 <input asp-for="EventName" class="form-control" />
@@ -32,8 +38,22 @@
                 <input asp-for="EventDescription" class="form-control" />
                 <span asp-validation-for="EventDescription" class="text-danger"></span>
             </div>
+            <div class="form-group">
+                <label asp-for="EventTypeID"></label>
+
+                <select asp-for="EventTypeID"asp-items="ViewBag.EventTypeID"class="form-control"> 
+                    
+                </select>
+            </div>
+            <div class="form-group">
+                <label asp-for="EventImageUrl" class="control-label"></label>
+                <!--old image url, text version-->
+                <!--the new imageUrl, with an upload button-->
+                <input type="file" name="imageFile" class="form-control" accept=".jpg,.jpeg,.png" /> <!--file type validation (MDN Web Docs, 2025)-->
+                <span asp-validation-for="EventImageUrl" class="text-danger"></span>
+            </div>
             <div class="form-group justify-content-evenly d-inline-flex p-2 g-2">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn btn-primary" /><!--Using bootstrap classes to style elemnts of the webpage (Otto and Thornton, 2026)-->
                 <div>
                     <a asp-action="Index" class="btn btn-secondary">Back to List</a>
                 </div>
@@ -44,5 +64,12 @@
 
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+<!--Reference List
+    Otto, M. and Thornton, J. (2026). Buttons. [online] getbootstrap.com. Available at: <https://getbootstrap.com/docs/5.3/components/buttons/> [Accessed 8 Apr. 2026].
+
+    contributors, M.O., Jacob Thornton, and Bootstrap (2026). Color. [online] getbootstrap.com. Available at: <https://getbootstrap.com/docs/5.3/customize/color/> [Accessed 8 Apr. 2026].
+-->

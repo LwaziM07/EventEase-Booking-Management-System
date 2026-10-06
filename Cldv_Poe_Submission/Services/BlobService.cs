@@ -7,7 +7,7 @@ namespace Cldv_Poe_Submission.Services
     {
         private readonly BlobServiceClient blobServiceClient;
 
-        private const string containerName = "images"; //Creating readonly instances of blob, don't need to modifying.
+        private const string containerName = "venue-images"; //Creating readonly instances of blob, don't need to modifying.
 
         public BlobService(string ConnectionString)
         {

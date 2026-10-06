@@ -12,5 +12,6 @@
     <WebStackScaffolding_DbContextTypeFullName>Cldv_Poe_Submission.Models.EventEaseDBContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
+    <NameOfLastUsedPublishProfile>C:\Users\Lwazi\OneDrive - ADvTECH Ltd\Documents\GitHub\cldv6211-g2-2026-poe-LwaziM07\Cldv_Poe_Submission\Properties\PublishProfiles\st10434465 - Web Deploy1.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

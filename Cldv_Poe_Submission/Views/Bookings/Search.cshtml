@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Cldv_Poe_Submission.Models.Booking>
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search for bookings</h1>
+
+<form asp-action="Search" method="get">
+    <div class="form-search form-actions no-color justify-content-center">
+        
+        <p>
+            Booking ID:
+            <select name="searchBookID" asp-items="ViewBag.BookingList" class="search">
+
+                <option value="">All Bookings</option>
+
+            </select>
+
+            Event Name:
+            <input type="text" name="searchString" value="@ViewData["CurrentSearch"]" class="search" /> <!--using the input as search perimeters (Co., 2022) -->
+            Booking Date:
+            <input type="date" name="searchBookingDate" value="@ViewData["CurrentBookingDate"]" class="search" />
+
+            <p>
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </p>
+
+            <p>
+                <a class ="btn btn-primary" asp-action="Search">Clear Search</a>
+            </p>
+        </p>
+           
+        
+    </div>
+
+
+</form>
+
+<div class="card p-3">
+    @if (Model.Any())
+    {
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th>
+                       Booking ID
+                    </th>
+                    <th>
+                      Specialist Name
+                    </th>
+                    <th>
+                        Event Name
+                    </th>
+                    <th>
+                       Booking Date
+                    </th>
+                    <th>
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookingId)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SpecialistName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Event.EventName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BookingDate)
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.BookingId" class="btn btn-primary">Edit</a> |
+                            <a asp-action="Details" asp-route-id="@item.BookingId" class="btn btn-info">Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.BookingId" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else             
+    {
+    <!-- if there are no bookings in the system, or if no bookings match the search, display an error
+            it is important to do error handling in our code, as you WILL lose marks if your app crashes/breaks.(Co., 2022)
+    -->
+    <p>No bookings found within the given search parameters.</p>
+    }
+</div>
+
+
+<!--*Reference List
+
+Co., T. (2022). Cloud Computing Technology. Springer Nature.
+
+ 
+-->

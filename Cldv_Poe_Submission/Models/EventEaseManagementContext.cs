@@ -17,59 +17,72 @@ public partial class EventEaseManagementContext : DbContext
 
     public virtual DbSet<Event> Events { get; set; }
 
+    public virtual DbSet<Specialist> Specialists { get; set; }
+
     public virtual DbSet<Venue> Venues { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Booking>(entity =>
         {
-            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD4496470A");
+            entity.HasKey(e => e.BookingId).HasName("PK__Bookings__73951ACD5D28FBE5");
 
             entity.Property(e => e.BookingId).HasColumnName("BookingID");
-            entity.Property(e => e.BookingDate).HasColumnType("datetime");
+            entity.Property(e => e.EndDate).HasColumnType("datetime");
             entity.Property(e => e.EventId).HasColumnName("EventID");
-            entity.Property(e => e.SpecialistEmail).HasMaxLength(200);
-            entity.Property(e => e.SpecialistName)
-                .IsRequired()
-                .HasMaxLength(100);
+            entity.Property(e => e.SpecialistId).HasColumnName("SpecialistID");
+            entity.Property(e => e.StartDate).HasColumnType("datetime");
             entity.Property(e => e.VenueId).HasColumnName("VenueID");
 
             entity.HasOne(d => d.Event).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.EventId)
-                .HasConstraintName("FK_Bookings");
+                .HasConstraintName("FK_Booking_Events");
+
+            entity.HasOne(d => d.Specialist).WithMany(p => p.Bookings)
+                .HasForeignKey(d => d.SpecialistId)
+                .HasConstraintName("FK_Specialists");
 
             entity.HasOne(d => d.Venue).WithMany(p => p.Bookings)
                 .HasForeignKey(d => d.VenueId)
-                .HasConstraintName("FK_Event");
+                .HasConstraintName("FK_Booking_Venues");
         });
 
         modelBuilder.Entity<Event>(entity =>
         {
-            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C870165D7CBA");
+            entity.HasKey(e => e.EventId).HasName("PK__Events__7944C870D4FACCA4");
 
             entity.Property(e => e.EventId).HasColumnName("EventID");
-            entity.Property(e => e.EndDate).HasColumnType("datetime");
-            entity.Property(e => e.EventDescription).HasMaxLength(200);
+            entity.Property(e => e.EventEndtDate).HasColumnType("datetime");
             entity.Property(e => e.EventName)
                 .IsRequired()
                 .HasMaxLength(100);
-            entity.Property(e => e.StartDate).HasColumnType("datetime");
+            entity.Property(e => e.EventStartDate).HasColumnType("datetime");
+        });
+
+        modelBuilder.Entity<Specialist>(entity =>
+        {
+            entity.HasKey(e => e.SpecialistId).HasName("PK__Speciali__7092080ECAA3234F");
+
+            entity.Property(e => e.SpecialistId).HasColumnName("SpecialistID");
+            entity.Property(e => e.SpecialistEmail)
+                .IsRequired()
+                .HasMaxLength(200);
+            entity.Property(e => e.SpecialistName)
+                .IsRequired()
+                .HasMaxLength(200);
         });
 
         modelBuilder.Entity<Venue>(entity =>
         {
-            entity.HasKey(e => e.VenueId).HasName("PK__Venues__3C57E5D2B83756B5");
+            entity.HasKey(e => e.VenueId).HasName("PK__Venues__3C57E5D2533B844D");
 
             entity.Property(e => e.VenueId).HasColumnName("VenueID");
-            entity.Property(e => e.ImageUrl)
-                .HasMaxLength(200)
-                .HasColumnName("ImageURL");
             entity.Property(e => e.VenueLocation)
                 .IsRequired()
-                .HasMaxLength(150);
+                .HasMaxLength(200);
             entity.Property(e => e.VenueName)
                 .IsRequired()
-                .HasMaxLength(100);
+                .HasMaxLength(200);
         });
 
         OnModelCreatingPartial(modelBuilder);

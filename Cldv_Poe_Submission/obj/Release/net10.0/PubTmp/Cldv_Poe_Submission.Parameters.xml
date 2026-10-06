@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="st10434465" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\Lwazi\\OneDrive\ -\ ADvTECH\ Ltd\\Documents\\GitHub\\cldv6211-g2-2026-poe-LwaziM07\\Cldv_Poe_Submission\\obj\\Release\\net10\.0\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

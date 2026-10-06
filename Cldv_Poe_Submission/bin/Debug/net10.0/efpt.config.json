@@ -1,6 +1,6 @@
 ﻿{
    "CodeGenerationMode": 6,
-   "ContextClassName": "EventEaseManagementContext",
+   "ContextClassName": "EventEaseDBContext",
    "ContextNamespace": null,
    "FilterSchemas": false,
    "IncludeConnectionString": false,
