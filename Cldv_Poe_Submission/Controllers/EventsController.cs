@@ -37,8 +37,7 @@ namespace Cldv_Poe_Submission.Controllers
                 events = events.Where(e => e.StartDate <= endDate && e.EndDate >= startDate);
             }
 
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType");
-
+            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType1");
             return View(await events.ToListAsync());
 
         }
@@ -52,7 +51,8 @@ namespace Cldv_Poe_Submission.Controllers
             }
 
             var @event = await _context.Events
-                .FirstOrDefaultAsync(m => m.EventId == id);
+               .Include(e => e.EventType)          
+               .FirstOrDefaultAsync(m => m.EventId == id);
             if (@event == null)
             {
                 return NotFound();
@@ -64,8 +64,7 @@ namespace Cldv_Poe_Submission.Controllers
         // GET: Events/Create
         public IActionResult Create()
         {
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType");
-
+            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType1");
             return View();
         }
 
@@ -95,8 +94,7 @@ namespace Cldv_Poe_Submission.Controllers
 
             }
 
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType", @event.EventTypeId);
-
+            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType1", @event.EventTypeId);
 
             if (ModelState.IsValid)
             {
@@ -120,8 +118,7 @@ namespace Cldv_Poe_Submission.Controllers
             {
                 return NotFound();
             }
-            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeID", "EventType", @event.EventTypeId);
-            return View(@event);
+            ViewData["EventTypeID"] = new SelectList(_context.EventTypes, "EventTypeId", "EventType1", @event.EventTypeId); return View(@event);
         }
 
         // POST: Events/Edit/5
@@ -199,7 +196,8 @@ namespace Cldv_Poe_Submission.Controllers
             }
 
             var @event = await _context.Events
-                .FirstOrDefaultAsync(m => m.EventId == id);
+               .Include(e => e.EventType)
+               .FirstOrDefaultAsync(m => m.EventId == id);
             if (@event == null)
             {
                 return NotFound();
