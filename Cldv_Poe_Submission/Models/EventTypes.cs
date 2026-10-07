@@ -4,7 +4,7 @@ namespace Cldv_Poe_Submission.Models
 {
     public class EventTypes
     {
-        public int EventTypeId { get; set; }
+        public int EventTypeID { get; set; }
         
         [Display(Name = "Event Type")] //making use of name attributes to format the text shown to the user (dotnet-bot, 2026)
         public string EventType { get; set; }

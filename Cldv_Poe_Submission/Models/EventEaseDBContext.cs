@@ -58,7 +58,7 @@ public partial class EventEaseDBContext : DbContext
             entity.Property(e => e.EventName)
                 .IsRequired()
                 .HasMaxLength(100);
-            entity.Property(e => e.EventTypeId).HasColumnName("EventTypeId");
+            entity.Property(e => e.EventTypeId).HasColumnName("EventTypeID");
             entity.Property(e => e.StartDate).HasColumnType("datetime");
 
             entity.HasOne(d => d.EventType).WithMany(p => p.Events)
@@ -71,8 +71,8 @@ public partial class EventEaseDBContext : DbContext
         {
             entity.HasKey(e => e.EventTypeId).HasName("PK__EventTyp__A9216B1FF750DD9A");
 
-            entity.Property(e => e.EventTypeId).HasColumnName("EventTypeId");
-            entity.Property(e => e.EventTypes)
+            entity.Property(e => e.EventTypeId).HasColumnName("EventTypeID");
+            entity.Property(e => e.EventType1)
                 .IsRequired()
                 .HasMaxLength(100)
                 .HasColumnName("EventType");

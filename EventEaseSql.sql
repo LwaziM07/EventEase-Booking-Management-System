@@ -1,6 +1,4 @@
-CREATE DATABASE EventEaseManagement;
-Use EventEaseManagement;
-
+--paste it here
 CREATE TABLE Venues(
 VenueID INT IDENTITY(1,1) PRIMARY KEY,
 VenueName NVARCHAR(100) NOT NULL,
@@ -61,5 +59,3 @@ VALUES
 ('Fundraiser'),
 ('Outdoor'),
 ('Cultural');
-
-SELECT * FROM EventTypes;
